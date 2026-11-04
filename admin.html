@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage the Teak Flooring & Interiors project photo gallery.">
+    <meta name="theme-color" content="#f6f3eb">
+    <title>Manage Gallery | Teak Flooring &amp; Interiors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <a class="brand" href="index.html#home" aria-label="Teak Flooring and Interiors home">
+            <span class="brand-mark" aria-hidden="true">TFI</span>
+            <span class="brand-name">TEAK FLOORING <span>AND INTERIORS</span></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">View website <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main id="main" class="admin-page">
+        <section class="admin-intro">
+            <p class="eyebrow"><span></span> Site editor</p>
+            <h1 class="page-title">Manage your<br><em>project gallery.</em></h1>
+            <p>Upload completed home and office projects. Your changes appear in the public gallery straight away.</p>
+        </section>
+
+        <section id="loginPanel" class="admin-panel" hidden>
+            <h2>Sign in to manage photos</h2>
+            <p>Enter the gallery administrator password.</p>
+            <form id="loginForm" class="admin-form admin-login">
+                <label for="adminPassword">Administrator password</label>
+                <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+                <button class="button button-dark" type="submit">Sign in</button>
+                <p id="loginMessage" class="admin-message" role="status"></p>
+            </form>
+        </section>
+
+        <section id="galleryManager" class="admin-workspace" hidden>
+            <div class="admin-toolbar">
+                <h2>Project photos <span id="projectCount"></span></h2>
+                <a class="text-link" href="what-we-do.html">View public gallery <span aria-hidden="true">↗</span></a>
+            </div>
+            <form id="projectForm" class="admin-panel admin-form" enctype="multipart/form-data">
+                <h2 id="formHeading">Add a project photo</h2>
+                <p>Use your own project photos. JPEG, PNG, WebP, or GIF; up to 10 MB each.</p>
+                <div class="admin-fields">
+                    <label>Project title
+                        <input name="title" type="text" maxlength="100" placeholder="e.g. Westlands office renovation" required>
+                    </label>
+                    <label>Category
+                        <select name="category" required>
+                            <option value="">Select a category</option>
+                            <option>Home renovation</option>
+                            <option>Office renovation</option>
+                            <option>Office design</option>
+                            <option>Interior design</option>
+                            <option>Flooring</option>
+                            <option>Repairs</option>
+                            <option>Construction</option>
+                        </select>
+                    </label>
+                    <label class="admin-field-wide">Short description
+                        <textarea name="description" rows="3" maxlength="500" placeholder="What changed in this space?"></textarea>
+                    </label>
+                    <label class="admin-field-wide">Project image
+                        <input name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif">
+                        <span class="field-help">Choose a new image to replace the current one. Leave empty when only updating the text.</span>
+                    </label>
+                </div>
+                <div class="admin-form-actions">
+                    <button id="saveProjectButton" class="button button-dark" type="submit">Add to gallery</button>
+                    <button id="cancelEditButton" class="button button-outline" type="button" hidden>Cancel edit</button>
+                    <p id="projectMessage" class="admin-message" role="status"></p>
+                </div>
+            </form>
+            <div id="adminProjectList" class="admin-project-list" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html#home">
+            <span class="brand-mark" aria-hidden="true">TFI</span>
+            <span class="brand-name">TEAK FLOORING <span>AND INTERIORS</span></span>
+        </a>
+        <p>Interior design, repairs, renovations &amp; construction.</p>
+        <a class="back-to-top" href="#main">Back to top ↑</a>
+        <div class="footer-contact">
+            <a href="tel:+254723425982">0723 425 982</a>
+            <a href="tel:+254716366557">0716 366 557</a>
+            <a href="mailto:teakflooringinteriors@gmail.com">teakflooringinteriors@gmail.com</a>
+            <span>P.O Box 215, Uthiru</span>
+        </div>
+        <span class="copyright">&copy; 2026 Teak Flooring &amp; Interiors</span>
+    </footer>
+    <script src="admin.js" defer></script>
+</body>
+</html>
